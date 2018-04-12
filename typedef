@@ -1,0 +1,36 @@
+在C语言中，定义一个结构体类型要用typedef :
+typedef struct point {
+    int x;
+    int y;
+}Point;
+
+在声明变量的时候就可以：Point p1;
+如果没有typedef, 如：
+struct point {
+    int x;
+    int y;
+};
+在声明变量的时候就必须用：struct point p1;
+Point是struct point的别名。
+也可以省去point，如下：
+typedef struct {
+    int x;
+    int y;
+}Point;
+
+在C++里，用法比C语言简单:
+struct Point {
+    int x;
+    int y;
+};
+定义了一个结构体类型Point,声明变量时直接Point p1;
+
+如果使用typedef，又会造成区别
+struct Point {
+    int x;
+    int y;
+}p1;//p1是一个结构体变量
+typedef struct Point {
+    int x;
+    int y;
+}p2;    //p2是一个结构体类型
